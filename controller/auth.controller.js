@@ -1,4 +1,4 @@
-import User from "../model/book.model.js";
+import User from "../model/user.model.js";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 
@@ -27,7 +27,7 @@ export const register = async (req, res) => {
 };
 // login
 export const login = async (req, res) => {
-  const user = await User.findOne({ email: req.body.email });
+  const user = await User.findOne({ name: req.body.name });
   if (!user) {
     return res.status(401).json({ message: "Invalide user" });
   }

@@ -37,8 +37,8 @@ export const login = async (req, res) => {
     { expired: "7d" }
   );
   res.json({ token });
+  const isPasswordValid = await bcrypt.compare(req.body.password, user.password);
+  if (!isPasswordValid) {
+     res.status(401).json({ message: "Invalid password" });
+  }
 };
-const isPasswordValid = await bcrypt.compare(req.body.password, user.password);
-if (!isPasswordValid) {
-   res.status(401).json({ message: "Invalid password" });
-}

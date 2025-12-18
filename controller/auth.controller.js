@@ -34,7 +34,7 @@ export const login = async (req, res) => {
   const token = jwt.sign(
     { id: user._id, role: user.role },
     process.env.JWT_SECRET,
-    { expired: "7d" }
+    {  expiresIn: "7d"}
   );
   res.json({ token });
   const isPasswordValid = await bcrypt.compare(req.body.password, user.password);

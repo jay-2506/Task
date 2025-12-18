@@ -17,7 +17,10 @@ const commentSchema = new mongoose.Schema({
   },
   approved: {
     type: Boolean,
-    default: false,
+    // default: false,
+  },
+  status: {
+    type: String,
   },
 });
 

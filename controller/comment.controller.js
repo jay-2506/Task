@@ -5,14 +5,14 @@ import Book from "../model/book.model.js";
 
 export const addComment = async (req, res) => {
   try {
-    const { book, rating,status } = req.body;
+    const { book, rating, status } = req.body;
 
     const comment = await Comment.create({
       book: book,
       // user: req.user._id,
       // text,
       rating,
-      status
+      status,
     });
 
     res.status(201).json({

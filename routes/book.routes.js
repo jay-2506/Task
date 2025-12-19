@@ -7,4 +7,5 @@ bookrouter.post("/create", controller.createBook);
 bookrouter.get("/get", controller.getBooks);
 bookrouter.get("/get/:id", controller.getBookById);
 bookrouter.put("/update/:id", controller.updateBook);
+bookrouter.delete("/delete/:id",controller.deleteBook)
 export default bookrouter;
